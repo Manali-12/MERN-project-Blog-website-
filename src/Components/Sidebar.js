@@ -1,8 +1,9 @@
 import { createTheme, Drawer, List, ListItem, makeStyles, ThemeProvider, Typography } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
+import InfoRoundedIcon from '@material-ui/icons/InfoRounded';
+import WebRoundedIcon from '@material-ui/icons/WebRounded';
 const drawerWidth = 240;
 const theme = createTheme({
     typography: {
@@ -24,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         flexGrow: 1,
-        padding: theme.spacing(8),
-        backgroundColor: "#F7FBE1"
+        padding: theme.spacing(3),
+        backgroundColor: "#FDEFEF"
 
     },
     items: {
@@ -33,6 +34,10 @@ const useStyles = makeStyles((theme) => ({
         color: "#295939",
         fontSize: "20px"
     },
+    iconStyle: {
+        padding: "0 10px 0 0",
+        marginBottom: "-4px",
+    }
 }));
 
 export default function Sidebar() {
@@ -49,19 +54,27 @@ export default function Sidebar() {
                     <List className={classes.content}>
                         <ListItem>
                             <Link to="/" className={classes.items}>
+
                                 <Typography variant="h6">
+                                    <HomeRoundedIcon className={classes.iconStyle} />
                                     Home
                                 </Typography>
                             </Link>
                         </ListItem>
                         <ListItem >
-                            <Link to="/about" className={classes.items}>                            <Typography variant="h6">
-                                About                            </Typography>
+                            <Link to="/about" className={classes.items}>
+                                <Typography variant="h6">
+                                    <InfoRoundedIcon className={classes.iconStyle} />
+                                    About
+                                </Typography>
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link to="/blogs" className={classes.items}>                            <Typography variant="h6">
-                                Blogs                            </Typography>
+                            <Link to="/blog" className={classes.items}>
+                                <Typography variant="h6">
+                                    <WebRoundedIcon className={classes.iconStyle} />
+                                    Blogs
+                                </Typography>
                             </Link>
                         </ListItem>
                     </List>

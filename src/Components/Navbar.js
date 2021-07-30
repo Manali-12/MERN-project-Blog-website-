@@ -25,7 +25,7 @@ export default function Navbar() {
             >
                 <Toolbar className={classes.toolbar}>
                     <Typography variant="h6">
-                        Welcome!
+                        Welcome to Kitchen Diaries!
                     </Typography>
                 </Toolbar>
             </AppBar>
