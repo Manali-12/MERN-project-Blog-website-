@@ -1,11 +1,8 @@
 import React from 'react'
-import { Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Typography, CardActions, makeStyles } from '@material-ui/core'
-import ItemList from '../ItemList';
-
-
-
+import { Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Typography, CardActions } from '@material-ui/core'
+import { Link } from 'react-router-dom';
 export default function BlogCard({ blogContent }) {
-    console.log(ItemList);
+    console.log(blogContent);
     return (
         <>
             <Card>
@@ -16,15 +13,15 @@ export default function BlogCard({ blogContent }) {
                         height="140"
                         image={blogContent.image}
                     ></CardMedia>
-                    <CardHeader><Typography variant="h4">{blogContent.header}</Typography></CardHeader>
+                    <CardHeader><Typography variant="h4" >{blogContent.header}</Typography></CardHeader>
                     <CardContent>
-                        <Typography variant="body2" color="textSecondary">
-                            {blogContent.details}
+                        <Typography variant="body2" color="textSecondary" >
+                            {blogContent.details[0].substring(0, 80)}...
                         </Typography>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button color="secondary">Learn More</Button>
+                    <Link to={`/blog/${blogContent.name}`}> <Button color="secondary">Learn More</Button></Link>
                 </CardActions>
             </Card>
 

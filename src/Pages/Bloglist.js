@@ -12,14 +12,15 @@ export default function Bloglist() {
     const classes = useStyles();
     return (
         <>
-
-            {ItemList.map((item) =>
-                <Grid container spacing={2} className={classes.root} >
-                    <Grid item xs={12} md={6} lg={6} justifyContent="center">
-                        <Paper ><BlogCard blogContent={item} /></Paper>
+            <Grid container spacing={2} className={classes.root} >
+                {ItemList.map((item, index) =>
+                    <Grid item xs={12} md={6} lg={4} justifyContent="center" key={index}>
+                        <Paper ><BlogCard blogContent={item} />
+                        </Paper>
                     </Grid>
-                </Grid>
-            )}
+                )}
+            </Grid>
+
 
         </>
     )
