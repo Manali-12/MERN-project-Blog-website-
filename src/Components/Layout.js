@@ -6,7 +6,7 @@ import Sidebar from './Sidebar'
 
 const useStyles = makeStyles({
     content: {
-        padding: "6% 10% 10% 25%",
+        padding: "3% 10% 10% 20%",
         minHeight: "58vh"
     },
     back: {

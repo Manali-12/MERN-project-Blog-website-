@@ -61,19 +61,19 @@ export default function Sidebar() {
                                 </Typography>
                             </Link>
                         </ListItem>
-                        <ListItem >
+                        {/* <ListItem >
                             <Link to="/about" className={classes.items}>
                                 <Typography variant="h6">
                                     <InfoRoundedIcon className={classes.iconStyle} />
                                     About
                                 </Typography>
                             </Link>
-                        </ListItem>
+                        </ListItem> */}
                         <ListItem>
                             <Link to="/blog" className={classes.items}>
                                 <Typography variant="h6">
                                     <WebRoundedIcon className={classes.iconStyle} />
-                                    Blogs
+                                    Explore
                                 </Typography>
                             </Link>
                         </ListItem>

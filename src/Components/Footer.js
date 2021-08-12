@@ -4,8 +4,8 @@ import React from 'react'
 const useStyles = makeStyles({
     footerText: {
         margin: "auto 45% 0 45%",
-        justifyContent: "spaceBetween"
-
+        justifyContent: "spaceBetween",
+        float: "bottom",
     }
 })
 
