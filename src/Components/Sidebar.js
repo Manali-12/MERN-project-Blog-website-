@@ -15,7 +15,7 @@ const theme = createTheme({
 
 const useStyles = makeStyles((theme) => ({
     drawer: {
-        width: drawerWidth,
+        maxWidth: drawerWidth,
         flexShrink: 0,
         backgroundColor: "#E8EFEB"
 
@@ -70,7 +70,7 @@ export default function Sidebar() {
                             </Link>
                         </ListItem> */}
                         <ListItem>
-                            <Link to="/blog" className={classes.items}>
+                            <Link to="/blogs" className={classes.items}>
                                 <Typography variant="h6">
                                     <WebRoundedIcon className={classes.iconStyle} />
                                     Explore
