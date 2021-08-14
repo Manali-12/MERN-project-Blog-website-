@@ -1,5 +1,5 @@
+import { useState } from "react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import { API_ID, API_KEY } from "./key"
 import Layout from "./Components/Layout"
 
 //Pages
@@ -9,18 +9,20 @@ import Blogs from "./Pages/Blogs"
 import Home from "./Pages/Home"
 import NotFound from "./Pages/NotFound"
 
-const url = `https://api.edamam.com/api/recipes/v2?type=public&q=menu&app_id=${API_ID}&app_key=${API_KEY}&cuisineType=Asian&mealType=Lunch&dishType=Main%20course&imageSize=REGULAR`;
+import details from './Details';
 function App() {
+
+  const [recipeList, setrecipeList] = useState(details);
+  console.log(recipeList)
   return (
     <div className="App">
 
       <Router>
-        <Layout>
+        <Layout setrecipeList={setrecipeList}>
           <Switch>
-            <Route path="/" component={Home} exact></Route>
-            {/* <Route path="/about" component={About}></Route> */}
-            <Route path="/blog" exact component={Bloglist}></Route>
-            <Route path="/blog/:name" component={Blogs}></Route>
+            <Route path="/" exact><Home /></Route>
+            <Route path="/blogs" exact ><Bloglist recipeList={recipeList} /></Route>
+            <Route path="/blogs/:name" component={Blogs}></Route>
             <Route component={NotFound} />
           </Switch>
         </Layout>

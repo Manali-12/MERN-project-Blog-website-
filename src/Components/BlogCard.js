@@ -1,31 +1,47 @@
 import React from 'react'
-import { Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Typography, CardActions } from '@material-ui/core'
+import { Button, Card, CardActionArea, CardContent, CardMedia, Typography, CardActions, useTheme, createTheme, makeStyles } from '@material-ui/core'
 import { Link } from 'react-router-dom';
+
+const useStyles = makeStyles({
+    heading: {
+        color: "#0A1931",
+        fontSize: "1.5rem",
+        padding: "0 0 10px 0"
+    },
+    card: {
+        justifyContent: "spa"
+    }
+})
+
 export default function BlogCard({ blogContent }) {
-    console.log(blogContent);
+
+    const classes = useStyles();
+
     return (
+
         <>
-            <Card>
+            <Card >
                 <CardActionArea>
                     <CardMedia
                         component="img"
-                        alt={blogContent.title}
+                        alt={blogContent.recipe.label}
                         height="140"
-                        image={blogContent.image}
+                        image={blogContent.recipe.image}
                     ></CardMedia>
-                    <CardHeader><Typography variant="h4" >{blogContent.header}</Typography></CardHeader>
+
                     <CardContent>
-                        <Typography variant="body2" color="textSecondary" >
-                            {blogContent.details[0].substring(0, 80)}...
+                        <Typography variant="h6" className={classes.heading} >{blogContent.recipe.label}</Typography>
+                        <Typography variant="body1" color="textSecondary" >
+                            {blogContent.recipe.ingredientLines[0]}, {blogContent.recipe.ingredientLines[1]}...
                         </Typography>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Link to={`/blog/${blogContent.name}`}> <Button color="secondary">Learn More</Button></Link>
+                    <Link to={`/blog/${blogContent.recipe.label}`}> <Button color="secondary">Learn More</Button></Link>
                 </CardActions>
             </Card>
-
-
         </>
+
+
     )
 }

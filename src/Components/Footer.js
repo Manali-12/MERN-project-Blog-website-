@@ -6,13 +6,14 @@ const useStyles = makeStyles({
         margin: "auto 45% 0 45%",
         justifyContent: "spaceBetween",
         float: "bottom",
+        position: "absolute",
+        bottom: 0
     }
 })
 
 export default function Footer() {
     const classes = useStyles();
     const year = new Date().getFullYear();
-    console.log(year);
     const footer = `© ${year} Kitchen Diaries`;
     return (
         <div className={classes.footerText}>
